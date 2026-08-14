@@ -1,5 +1,10 @@
 # 🛡️ TriageIQ — Autonomous AI SOC Alert Triage & Incident Copilot
 
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![Framework](https://img.shields.io/badge/LangGraph-0.2.0-orange.svg)
+![UI](https://img.shields.io/badge/Streamlit-1.38.0-red.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 **TriageIQ** is an autonomous multi-agent security operations copilot built with **LangGraph**, **LangChain**, and **Streamlit**. It solves the critical Security Operations Center (SOC) alert fatigue problem by automatically ingesting security alerts, enriching Indicators of Compromise (IOCs) via VirusTotal and AbuseIPDB feeds, correlating multi-stage attack events into unified campaigns, calculating contextual threat severity via LLM reasoning, and generating MITRE ATT&CK-mapped incident reports.
 
 ---
@@ -18,7 +23,7 @@
 
 ## 🏗️ Multi-Agent Architecture
 
-```
+```text
                        +-----------------------------+
                        |   Raw SOC Alert Ingestion   |
                        +--------------+--------------+
@@ -50,7 +55,7 @@
 
 ### 1. Clone & Navigate to Repository
 ```bash
-git clone https://github.com/your-username/triageiq.git
+git clone https://github.com/YOUR_USERNAME/triageiq.git
 cd triageiq
 ```
 
@@ -65,7 +70,7 @@ source .venv/bin/activate
 
 ### 3. Install Dependencies
 ```bash
-uv pip install --link-mode=copy langgraph langchain langchain-groq streamlit requests python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 4. (Optional) Configure Environment Keys
@@ -73,12 +78,26 @@ Copy `.env.example` to `.env` and fill in your API keys:
 ```bash
 cp .env.example .env
 ```
-> *Note: If no API keys are provided, TriageIQ automatically runs in resilient offline simulation mode.*
+> *Note: If no API keys are provided, TriageIQ automatically runs in resilient offline simulation mode with zero external dependencies.*
 
 ### 5. Launch Web Application
 ```bash
 streamlit run app.py
 ```
+
+---
+
+## 🎯 Pre-Configured Attack Scenarios
+
+TriageIQ comes pre-loaded with 5 realistic attack scenarios to test and showcase agent capabilities:
+
+| Scenario | Attack Type | Expected Severity | Key Tactics |
+|---|---|---|---|
+| **APT29 OAuth Phishing** | Credential Theft & Consent Grant | `HIGH` | MFA Bypass, OAuth Privilege Escalation |
+| **LockBit 3.0 Ransomware** | Host Impact & Encryption | `CRITICAL` | Volume Shadow Copy Deletion, C2 Beaconing |
+| **SSH Brute Force** | External Recon & Access | `HIGH` | Tor Exit Node Burst, Root Compromise |
+| **DNS Data Exfiltration** | Tunneling & Staging | `CRITICAL` | TXT Record Flood, Compressed Archive Staging |
+| **Internal Port Scan** | Vulnerability Scanner | `FALSE_POSITIVE` | Authorized SYN Sweep Noise Suppression |
 
 ---
 
@@ -98,22 +117,39 @@ streamlit run app.py
 ```text
 triageiq/
 ├── app.py                     # Streamlit SOC Analyst Command Center UI
-├── src/
-│   ├── __init__.py            # Package initialization
-│   ├── schema.py              # Pydantic data models & LangGraph TriageState
-│   ├── alert_generator.py     # Attack scenarios & synthetic alert feeds
-│   ├── tools/
-│   │   ├── __init__.py
-│   │   └── enrichment.py      # VirusTotal & AbuseIPDB Threat Intel clients
-│   └── agents/
-│       ├── __init__.py
-│       └── pipeline.py        # LangGraph state graph wiring and node execution
+├── requirements.txt           # Python package dependencies
 ├── .env.example               # API configuration template
-├── .gitignore                 # Git ignore file
-└── README.md                  # Project documentation & architecture
+├── .gitignore                 # Git ignore configuration
+├── README.md                  # Project documentation & architecture
+└── src/
+    ├── __init__.py            # Package initialization
+    ├── schema.py              # Pydantic data models & LangGraph TriageState
+    ├── alert_generator.py     # Attack scenarios & synthetic alert feeds
+    ├── tools/
+    │   ├── __init__.py
+    │   └── enrichment.py      # VirusTotal & AbuseIPDB Threat Intel clients
+    └── agents/
+        ├── __init__.py
+        └── pipeline.py        # LangGraph state graph wiring and node execution
 ```
 
 ---
 
+## 🌐 Deploying to GitHub & Cloud
+
+### Push to GitHub
+```bash
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/triageiq.git
+git push -u origin main
+```
+
+### Free 1-Click Deployment on Streamlit Cloud
+1. Go to [share.streamlit.io](https://share.streamlit.io).
+2. Connect your GitHub repository `triageiq`.
+3. Set **Main file path** to `app.py` and click **Deploy**!
+
+---
+
 ## 🛡️ License
-Distributed under the MIT License. Built for cybersecurity engineers, SREs, and AI security researchers.
+Distributed under the MIT License. Built for cybersecurity engineers, SOC teams, and AI security researchers.
