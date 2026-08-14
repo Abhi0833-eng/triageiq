@@ -3,6 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 ![Framework](https://img.shields.io/badge/LangGraph-0.2.0-orange.svg)
 ![UI](https://img.shields.io/badge/Streamlit-1.38.0-red.svg)
+![Deployment](https://img.shields.io/badge/Streamlit%20Cloud-Deployed-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 **TriageIQ** is an autonomous multi-agent security operations copilot built with **LangGraph**, **LangChain**, and **Streamlit**. It solves the critical Security Operations Center (SOC) alert fatigue problem by automatically ingesting security alerts, enriching Indicators of Compromise (IOCs) via VirusTotal and AbuseIPDB feeds, correlating multi-stage attack events into unified campaigns, calculating contextual threat severity via LLM reasoning, and generating MITRE ATT&CK-mapped incident reports.
