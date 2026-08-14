@@ -55,7 +55,7 @@
 
 ### 1. Clone & Navigate to Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/triageiq.git
+git clone https://github.com/Abhi0833-eng/triageiq.git
 cd triageiq
 ```
 
@@ -140,7 +140,7 @@ triageiq/
 ### Push to GitHub
 ```bash
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/triageiq.git
+git remote add origin https://github.com/Abhi0833-eng/triageiq.git
 git push -u origin main
 ```
 
