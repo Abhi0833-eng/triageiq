@@ -1,0 +1,15 @@
+# Python virtual environment & cache
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment & API keys
+.env
+
+# Streamlit runtime
+.streamlit/
+
+# OS specific
+.DS_Store
+Thumbs.db
