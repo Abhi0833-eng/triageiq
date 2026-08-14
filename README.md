@@ -1,10 +1,12 @@
 # 🛡️ TriageIQ — Autonomous AI SOC Alert Triage & Incident Copilot
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
-![Framework](https://img.shields.io/badge/LangGraph-0.2.0-orange.svg)
-![UI](https://img.shields.io/badge/Streamlit-1.38.0-red.svg)
-![Deployment](https://img.shields.io/badge/Streamlit%20Cloud-Deployed-brightgreen.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
+[![Framework](https://img.shields.io/badge/LangGraph-0.2.0-orange.svg)](https://github.com/langchain-ai/langgraph)
+[![UI](https://img.shields.io/badge/Streamlit-1.38.0-red.svg)](https://streamlit.io)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://triageiq-leypvsxcvivea98tt22hy7.streamlit.app/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+> 🚀 **Live Demo:** Access the deployed TriageIQ SOC Command Center live at: **[triageiq.streamlit.app](https://triageiq-leypvsxcvivea98tt22hy7.streamlit.app/)**
 
 **TriageIQ** is an autonomous multi-agent security operations copilot built with **LangGraph**, **LangChain**, and **Streamlit**. It solves the critical Security Operations Center (SOC) alert fatigue problem by automatically ingesting security alerts, enriching Indicators of Compromise (IOCs) via VirusTotal and AbuseIPDB feeds, correlating multi-stage attack events into unified campaigns, calculating contextual threat severity via LLM reasoning, and generating MITRE ATT&CK-mapped incident reports.
 
